@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grupo AMS - Contacto</title>
+    <link rel="stylesheet" href="../CSS/estiloscss.css">
+</head>
+<body>
+    <header>
+        <img src="../images/grupoAMS.png" alt="Grupo AMS" width="200" height="100">
+    </header>
+
+    <nav>
+        <a href="../index.html">Inicio</a>
+        <a href="productos.html">Proyectos</a>
+        <a href="presupuesto.html" class="active">Presupuesto</a>
+        <a href="contacto.html">Contacto</a>
+    </nav>
+    
+    <div class="fondo-presupuesto">
+        <div class="container">
+            <h2>Solicite un Presupuesto</h2>
+            <div class="contenido-presupuesto">
+                <form class="formulario-presupuesto">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]{2,}">
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="telefono">Teléfono:</label>
+                    <input type="tel" id="telefono" name="telefono" required pattern="[0-9]{9}">
+
+                    <label for="mensaje">Solicite más información:</label>
+                    <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+
+                    <div class="politica-privacidad">
+                        <label for="politica"> Acepto la <a href="#">Política de privacidad</a></label>
+                        <input type="checkbox" id="politica" name="politica">
+                    </div>
+
+                    <input type="submit" value="Enviar">
+                </form>
+
+                <div class="mas-info">
+                    <h3>Información adicional</h3>
+                    <p>Ofrecemos presupuestos personalizados para cada proyecto, ya sea construcción, remodelación o mantenimiento.
+                        Contacte con nosotros y le proporcionaremos uan estimación en un breve periodo de tiempo</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Dirección de la empresa: C. Pino Salgareño, 2, 41016 Sevilla</p>
+        <p><a href="#">Aviso Legal</a></p>
+        <a href="https://www.facebook.com/Grupo.Ams.Sevilla/?locale=es_ES" target="_blank"><img src="../images/facebook.png" alt="Facebook" width="50" height="25"></a> <!--target blank hace que al pulsar el logo te dirijas a una nueva pestaña-->
+        <a href="https://x.com/grupo_ams" target="_blank"><img src="../images/X.png" alt="X" width="50" height="25"></a>
+        <a href="https://www.linkedin.com/company/grupo-ams-sevilla/?originalSubdomain=es" target="_blank"><img src="../images/linkedin.png" alt="LinkedIn" width="50" height="25"></a>
+    </footer>
+
+</body>
+</html>

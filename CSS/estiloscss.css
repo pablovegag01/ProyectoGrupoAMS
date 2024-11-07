@@ -1,0 +1,355 @@
+html, body{ 
+    margin: 0; /*elimina cualquier margen predeterminado del navegador*/
+    padding: 0; /*elimina cualquier relleno interno predeterminado del navegador*/
+    overflow-x: hidden; /*evita que el contenido se desborde horizontalmente y genere una barra de desplazamiento horizontal*/
+}
+
+header {
+    background-color: #ffffff;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+}
+
+/* Estilos para barra menú*/
+nav {
+    background-color: #0056b3;
+    padding: 10px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    padding: 10px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+nav a.active {
+    background-color: #8ab9ff;
+    border-radius: 5px;
+}
+
+/*Estilos para el cuerpo*/
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.container p{
+    text-align: justify;
+}
+
+/*Estilos secciones página inicial*/
+.section{
+    padding: 40px 0;
+}
+
+.section h2{
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #0056b3;
+    text-align: center;
+}
+
+.section p{
+    line-height: 1.8;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.cuadricula-servicios{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.servicio{ /*Características de la caja*/
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /*para aplicar sombra a la caja; 0 (desplazamiento horizontal) 4 (desplazamiento vertical) 6 (valor de desenfoque). Luego aplicamos color y el 0.1 es 10%*/
+}
+
+.servicio h3{
+    color: #007bff;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.servicio p {
+    font-size: 15px;
+    color: #555;
+}
+
+.section.bg-blanco {
+    background-color: #f9f9f9;
+}
+
+.section.bg-oscuro {
+    background-color: #7c7c7c;
+    color: #fff;
+}
+
+.section.bg-oscuro h2 {
+    color: #fff;
+}
+
+/*Estilos para pie de página*/
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    margin-top: 0px;
+    width: 100%;
+    bottom: 0;
+}
+
+footer img {
+    width: 24px;
+    height: 24px;
+    margin: 0 10px;
+    vertical-align: middle;
+}
+
+footer p {
+    margin: 5px 0;
+    text-align: center;
+}
+
+/*Para hacer imágenes deslizando*/
+.ProyectosImportantes {
+    position: relative;
+    width: 100%;
+    overflow: hidden; /*Cuando el contenido es más grande que el tamaño del contenedor, overflow controla si el contenido adicional se recorta. Hidden recorta el contenido adicional y no se muestra*/
+}
+
+.slides {
+    display: flex; /*Define un contenedor como un contenedor flexible, lo que permite un diseño flexible y dinámico*/
+}
+
+.slide {
+    flex: 0 0 100%;
+    display: none;
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
+}
+
+.navigation {
+    position: absolute; /*Se elimina del flujo normal del documento y se coloca en una posición absoluta*/
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%); /*Se utiliza para desplazar un elemento horizontalmente a lo largo del eje X de su posición original. El elemento se moverá a la izquierda en un 50% de su propio ancho*/
+}
+
+.navigation label {
+    cursor: pointer; /*Cambia la apariencia del cursor cuando pasa por un elemento*/
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background-color: #ccc;
+    border-radius: 50%;
+    margin: 0 5px;
+}
+
+input[type="radio"] {
+    display: none; /*Para ocultar los botones de radio en un formulario web*/
+}
+
+#slide1:checked ~ .slides .slide:nth-of-type(1), /*Se utilizan en conjunto con los botones de radio para mostrar u ocultar diapositivas en un carrusel o slider*/ /*Esta regla se aplica cuando el botón de radio slide1 está marcado*/
+#slide2:checked ~ .slides .slide:nth-of-type(2),
+#slide3:checked ~ .slides .slide:nth-of-type(3),
+#slide4:checked ~ .slides .slide:nth-of-type(4) { /*Esta regla muestra la segunda diapositiva cuando el botón de radio slide2 está marcado*/
+    display: block;
+}
+
+#slide1:checked ~ .navigation label:nth-of-type(1),
+#slide2:checked ~ .navigation label:nth-of-type(2),
+#slide3:checked ~ .navigation label:nth-of-type(3),
+#slide4:checked ~ .navigation label:nth-of-type(4) {
+    background-color: rgba(255, 166, 0, 0.733); /*Cambia de color el círculo que está marcado*/
+}
+
+/*QUEDA AQUÍ CERRADO INDEX*/
+
+/*Estilo para PRODUCTOS*/
+/* Estilos específicos para la galería productos.html */
+.galeria {
+    display: grid; /*cuadricula*/
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px; /*espacio entre los elementos de la galería*/
+    justify-items: center; /*centra las tarjetas horizontalmente*/
+}
+.obra {
+    background-color: #ffffff;
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.obra img {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.3s ease;
+}
+.obra:hover{
+    transform: scale(1.05); /*aumenta el tamaño al pasar el cursor*/
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+/*Para la información de las imágenes*/
+.obra .info{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.obra:hover .info{
+    opacity: 1; /*para que la información se muestre al pasar el cursor*/
+}
+.obra .info h3{
+    margin: 0;
+    font-size: 13px;
+    text-align: justify;
+}
+/*QUEDA AQUÍ CERRADO PRODUCTOS*/
+
+/*PRESUPUESTO*/
+/* Estilo para el formulario */
+.fondo-presupuesto{
+    background: url(construccion.jpg) no-repeat center center/cover;
+    min-height: calc(100vh - 100px);
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.fondo-presupuesto h2{
+    color: white;
+}
+.contenido-presupuesto{
+    display: flex;
+    gap: 50px;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.8); /*fondo translúcido*/
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+/*estilos para el formulario*/
+.formulario-presupuesto{
+    flex: 2;
+}
+.formulario-presupuesto label{
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+.formulario-presupuesto input, .formulario-presupuesto textarea{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.formulario-presupuesto input[type="submit"]{
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+.formulario-presupuesto input[type="submit"]:hover{
+    background-color: #004490;
+}
+/*estilos para la información adicional*/
+.mas-info{
+    flex: 1;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.mas-info h3{
+    margin-bottom: 10px;
+    color: #0056b3;
+}
+.mas-info p{
+    margin-bottom: 20px;
+}
+
+/*Estilo para la checkbox*/
+.politica-privacidad{
+    display: flex;
+    align-items: center; /*alinea verticalmente la checkbox con el texto*/
+    gap: 10px; /*espacio entre la checkbox y el texto*/
+}
+.politica-privacidad input[type="checkbox"]{
+    margin: 0;
+    width: 15px;
+    height: 15px;
+    position: relative;
+}
+/*ACABA ESTILOS PARA PRESUPUESTO*/
+
+/*Estilo para página de contactos*/
+.pagina-contacto {
+    background: url(naveams.jpg) no-repeat center center/cover;
+    min-height: calc(100vh - 100px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+.pagina-contacto .container {
+    background-color: rgba(255, 255, 255, 0.8); /*fondo translúcido*/
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 800px;
+    width: 100%;
+}
+.mapa {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 600px;
+}
+iframe {
+    width: 100%;
+    max-width: 600px;
+    height: 450px;
+    border: 0;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1)
+}
+
